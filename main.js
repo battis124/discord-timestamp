@@ -84,7 +84,7 @@ $(document).ready(function () {
         ~~(planned_date.valueOf() / 1000) +
         ":R> | <t:" +
         ~~(planned_date.valueOf() / 1000) +
-        ":F>"
+        ":f>"
     );
   }
 
@@ -109,7 +109,7 @@ $(document).ready(function () {
         ~~(data_now.valueOf() / 1000) +
         ":R> | <t:" +
         ~~(data_now.valueOf() / 1000) +
-        ":F>"
+        ":f>"
     );
   }
 
