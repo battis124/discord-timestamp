@@ -161,3 +161,10 @@ $.fn.datepicker.dates["en"] = {
   titleFormat: "MM yyyy" /* Leverages same syntax as 'format' */,
   weekStart: 0,
 };
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).val()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
