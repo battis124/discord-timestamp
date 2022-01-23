@@ -114,6 +114,12 @@ $(document).ready(function () {
   }
 
   //$("#inputResult").val("qwqqe");
+  var tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  );
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
 });
 $.fn.datepicker.dates["en"] = {
   days: [
@@ -161,10 +167,20 @@ $.fn.datepicker.dates["en"] = {
   titleFormat: "MM yyyy" /* Leverages same syntax as 'format' */,
   weekStart: 0,
 };
-function copyToClipboard(element) {
+
+function copyToClipboard(element, el) {
   var $temp = $("<input>");
   $("body").append($temp);
   $temp.val($(element).val()).select();
-  document.execCommand("copy");
+  try {
+    var successful = document.execCommand("copy");
+    var msg = successful ? "Skopiowano!" : "oops, nie udało się skopiować!";
+    console.log(el);
+    var orginal_title = $(el).attr("data-bs-original-title");
+    $(el).attr("data-bs-original-title", msg).tooltip("show");
+    $(el).attr("data-bs-original-title", orginal_title);
+  } catch (err) {
+    console.log("unable to copy", err);
+  }
   $temp.remove();
 }
