@@ -35,15 +35,15 @@
     <div class="shadow rounded bg-white py-5 mb-5">
       <div class="row g-3 px-4" id="add-dif">
         <div class="col-12 pb-4">
-          <h1>Odliczanie</h1>
+          <h1><i class="fas fa-stopwatch-20"></i> Odliczanie </h1>
         </div>
-        <div class="col-md-4">
+        <div class="col-md">
           <label for="inputDays" class="form-label">Dni</label>
           <select class="form-select" id="inputDays">
             <option selected value="0">0</option>
           </select>
         </div>
-        <div class="col-md-4">
+        <div class="col-md">
           <label for="inputHours" class="form-label">Godziny</label>
 
           <select class="form-select" id="inputHours">
@@ -52,23 +52,29 @@
 
           <!-- <input type="text" class="form-control" id="inputHours" /> -->
         </div>
-        <div class="col-md-4">
+        <div class="col-md">
           <label for="inputMinutes" class="form-label">Minuty</label>
           <select class="form-select" id="inputMinutes">
             <option selected value="0">0</option>
           </select>
         </div>
+        <div class="col-md">
+          <label for="inputSeconds" class="form-label">Sekundy</label>
+          <select class="form-select" id="inputSeconds">
+            <option selected value="0">0</option>
+          </select>
+        </div>
 
-        <div class="col-md-3 text-center mx-auto pt-4">
-          <button id="calculate" class="btn btn-primary w-100">Oblicz</button>
+        <div class="col-md-3 text-center mx-auto pt-4 d-flex align-items-end">
+          <button id="calculate" class="btn btn-primary w-100">Oblicz </button>
         </div>
       </div>
       <div class="row g-3 px-4 py-5">
-        <div class="col-md-6 mx-auto">
-          <textarea disabled class="form-control" placeholder="" id="inputResult" style="height: 100px"></textarea>
+        <div class="col-md-12">
+          <textarea disabled class="form-control" placeholder="" id="inputResult" style="height: 130px"></textarea>
           <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Skopiuj"
-            class="btn btn-secondary mx-auto mt-2" onclick="copyToClipboard('#inputResult',this)">Kopiuj <i
-              class="fas fa-copy"></i></button>
+            class="btn btn-secondary mx-auto mt-2 px-4" onclick="copyToClipboard('#inputResult',this)">Kopiuj <i
+              class="fas fa-copy ml-2"></i></button>
         </div>
       </div>
     </div>
@@ -76,46 +82,46 @@
     <div class="shadow rounded bg-white py-5">
       <div class="row g-3 px-4" id="plan-timestamp">
         <div class="col-12 pb-4">
-          <h1>Planowanie</h1>
+          <h1><i class="fas fa-calendar-alt"></i> Planowanie </h1>
         </div>
-        <div class="col-md-4">
+        <div class="col-md">
           <label for="planDateDays" class="form-label">Data</label>
           <div class='input-group date' id='datetimepicker1'>
             <input type='text' id="planDateDate" class="form-control dateinput" />
             <span class="input-group-append">
               <span class="input-group-text bg-white d-block">
 
-                <i class="fa fa-calendar"></i>
+                <i class="far fa-calendar-alt"></i>
               </span>
             </span>
             </span>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md">
           <label for="planDateHours" class="form-label">Godzina</label>
 
           <select class="form-select" id="planDateHours">
-            <option selected value="0">0</option>
+            <option selected value="0">00</option>
           </select>
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md">
           <label for="planDateMinutes" class="form-label">Minuta</label>
           <select class="form-select" id="planDateMinutes">
-            <option selected value="0">0</option>
+            <option selected value="0">00</option>
           </select>
         </div>
 
-        <div class="col-md-3 text-center mx-auto pt-4">
-          <button id="planDateSubmit" class="btn btn-primary w-100">Zaplanuj</button>
+        <div class="col-md-3 text-center mx-auto pt-4 d-flex align-items-end">
+          <button id="planDateSubmit" class="btn btn-primary w-100">Zaplanuj </button>
         </div>
       </div>
       <div class="row g-3 px-4 py-5">
-        <div class="col-md-6 mx-auto">
-          <textarea disabled class="form-control" placeholder="" id="planDateResult" style="height: 100px"></textarea>
+        <div class="col-md-12">
+          <textarea disabled class="form-control" placeholder="" id="planDateResult" style="height: 130px"></textarea>
           <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Skopiuj"
-            class="btn btn-secondary mx-auto mt-2" onclick="copyToClipboard('#planDateResult',this)">Kopiuj <i
-              class="fas fa-copy"></i></button>
+            class="btn btn-secondary mx-auto mt-2 px-4" onclick="copyToClipboard('#planDateResult',this)">Kopiuj <i
+              class="fas fa-copy ml-2"></i></button>
         </div>
       </div>
     </div>

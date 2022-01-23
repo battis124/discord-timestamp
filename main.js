@@ -13,20 +13,23 @@ $(document).ready(function () {
       '<option value="' + index + '">' + index + "</option>"
     );
   }
-  for (var index = 1; index <= 24; index++) {
+  for (var index = 1; index <= 23; index++) {
     $("#inputHours").append(
       '<option value="' + index + '">' + index + "</option>"
     );
     $("#planDateHours").append(
-      '<option value="' + index + '">' + index + "</option>"
+      '<option value="' + index + '">' + ("0" + index).slice(-2) + "</option>"
     );
   }
-  for (var index = 1; index <= 60; index++) {
+  for (var index = 1; index <= 59; index++) {
+    $("#inputSeconds").append(
+      '<option value="' + index + '">' + index + "</option>"
+    );
     $("#inputMinutes").append(
       '<option value="' + index + '">' + index + "</option>"
     );
     $("#planDateMinutes").append(
-      '<option value="' + index + '">' + index + "</option>"
+      '<option value="' + index + '">' + ("0" + index).slice(-2) + "</option>"
     );
   }
 
@@ -84,7 +87,7 @@ $(document).ready(function () {
         ~~(planned_date.valueOf() / 1000) +
         ":R> | <t:" +
         ~~(planned_date.valueOf() / 1000) +
-        ":f>"
+        ":F>"
     );
   }
 
@@ -92,13 +95,15 @@ $(document).ready(function () {
     var days = $("#inputDays").val();
     var hours = $("#inputHours").val();
     var minutes = $("#inputMinutes").val();
+    var seconds = $("#inputSeconds").val();
 
     var data_now = new Date();
     data_now.setTime(
       data_now.getTime() +
         days * 60 * 60 * 24 * 1000 +
         hours * 60 * 60 * 1000 +
-        minutes * 60 * 1000
+        minutes * 60 * 1000 +
+        seconds * 1000
     );
 
     //  data_now.setDa(data_now.getDa + minutes)
