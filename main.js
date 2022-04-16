@@ -38,11 +38,10 @@ $(document).ready(function () {
 
   $("#planDateDate").val(
     data_now.getDate() +
-      "." +
-      data_now.getMonth() +
-      1 +
-      "." +
-      data_now.getFullYear()
+    "." +
+    ("0"+(data_now.getMonth()+1)).slice(-2) +
+    "." +
+    data_now.getFullYear()
   );
   $("#planDateHours option[value=" + data_now.getHours() + "]").attr(
     "selected",
